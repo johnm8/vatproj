@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Calculation  List{% endblock %}
+
+{% block body %}
+
+  <div class="container text-center mt-5">
+    <div class="row justify-content-center">
+      <div class="col">
+        <div class="card">
+          <div class="card-header">
+            Exclusive Vat = V with VAT added and the amount of VAT calculated at the rate R.
+            <br/>
+            Inclusive Vat = V With VAT subtracted and the amount of VAT calculated at the rate R.
+
+          </div>
+          <div class="card-body">
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>Price</th>
+                  <th>Currency</th>
+                  <th>Vat Rate</th>
+                  <th>Inclusive Vat </th>
+                  <th>Exclusive Vat </th>
+                 </tr>
+              </thead>
+              <tbody>
+                {% for cmoCalculation in cmoCalculations %}
+                  <tr>
+                    <td>{{cmoCalculation.cmoPrice.price}}</td>
+                    <td>{{cmoCalculation.cmoPrice.currency}}</td>
+                    <td>{{cmoCalculation.cmoVatRate.rate}}</td>
+                    <td>{{cmoCalculation.priceIncVat}}</td>
+                    <td>{{cmoCalculation.priceExcVat}}</td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
+
+

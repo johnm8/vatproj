@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %} 
+{% block title %}New Price{% endblock %} 
+{% block body %} 
+  <div class="container">
+    <div class="card mt-4">
+      <div class="card-body">
+        {{ form_start(form) }}
+          <div>
+              {{ form_errors(form) }}
+          </div>
+          <div class="row">
+            <div class="col">
+              {{ form_row(form.price, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="col">
+              {{ form_row(form.currency, {'attr': {'class': 'form-control'}}) }}
+            </div>
+          </div>
+          <div class=" row mt-2">
+            <div class="col">
+              <button class="btn-primary btn" type="submit">New Vat Rate </button>
+            </div>
+          </div> 
+        {{ form_end(form) }} 
+      </div>
+    </div>
+  </div> 
+{% endblock %}

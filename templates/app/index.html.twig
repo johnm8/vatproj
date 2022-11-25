@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AppController!{% endblock %}
+
+{% block body %}
+
+  <div class="container text-center mt-5">
+    <div class="row justify-content-center">
+      <div class="col">
+        <div class="card">
+          <div class="card-header">
+            Please create a vat rate first, then create a price and then perform calculations from the price page
+          </div>  
+          <div class="card-body">
+            <ul class="list-group">
+              <li class="list-group-item"><a href="/vat/list">(Step 1) Rates</a></li>
+              <li class="list-group-item" aria-disabled="true"><a href="/price/list">(Step 2) Pricing</a></li>  
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

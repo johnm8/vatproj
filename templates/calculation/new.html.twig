@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %} 
+{% block title %}New Calculation{% endblock %} 
+{% block body %} 
+  <div class="container">
+    <div class="card mt-4">
+      <div class="card-body">
+        {{ form_start(form) }}
+          <div>
+              {{ form_errors(form) }}
+          </div>
+          <div class="row">
+            <div class="col">
+              {{ form_row(form.cmoPrice, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="col"">
+              {{ form_row(form.cmoVatRate, {'attr': {'class': 'form-control'}}) }}
+            </div>
+          </div>
+          <div class=" row mt-2">
+            <div class="col">
+              <button class="btn-primary btn" type="submit">calculate </button>
+            </div>
+          </div> 
+        {{ form_end(form) }} 
+      </div>
+    </div>
+  </div> 
+{% endblock %}
